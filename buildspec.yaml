@@ -4,7 +4,7 @@ phases:
   pre_build:
     commands:
       - echo Starting Maven build...
-      - mvn clean install -DskipTests       # Run maven from root, skip tests if needed
+      - mvn clean install       # Run maven from root, skip tests if needed
       - echo Logging in to Amazon ECR...
       - aws --version
       - REPOSITORY_URI=301984890704.dkr.ecr.ap-south-1.amazonaws.com/test-codepipeline-ecr-repo
