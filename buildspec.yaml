@@ -7,9 +7,9 @@ phases:
   pre_build:
     commands:
       - echo Starting Maven build...
-      - cd webapp               # Change to your project directory if needed
-      - mvn clean package -DskipTests    # Skip tests if they fail, fix tests later
-      - cd ..
+      # - cd webapp    # Removed since no such folder
+      - mvn clean package -DskipTests
+      # - cd ..        # Removed
       - echo Logging in to Amazon ECR...
       - REPOSITORY_URI=301984890704.dkr.ecr.ap-south-1.amazonaws.com/test-codepipeline-ecr-repo
       - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin $REPOSITORY_URI
